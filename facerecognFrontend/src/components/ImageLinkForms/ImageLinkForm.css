@@ -1,0 +1,20 @@
+.form{
+	padding-top: 25px;
+	padding-right: 10px;
+	padding-left: 10px; 
+	margin-left: 350px;
+	margin-right: 100px;
+	width: 600px;
+	height: 100px;
+
+	background:
+		radial-gradient(black 15%, transparent 1%) 0 0,
+		radial-gradient(black 15%, transparent 1%) 8px 8px,
+		radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+		radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+	background-color:#200088889;
+	background-size:16px 16px;
+}
+.txt{
+	margin-top: 10px;
+}

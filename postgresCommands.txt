@@ -1,0 +1,32 @@
+"\l for list of databases, \d list of tables \g or \q to exit \h for help"
+yohannes@localhost$ sudo su - postgres
+postgres@localhost$ createdb 'database name'
+postgres@localhost$ psql database name
+postgres# CREATE TABLE table_name (column_1 datatype, column_2 datatype, column_3 datatype);
+datatype: 
+name: text
+age: smallint(32045)
+birthday: date
+score:smallint
+postgres# INSERT INTO table_name (column_1, column_2, column_3) VALUES (value_1, value_2, value_3);
+postgres=# SELECT name,age,birthday FROM users; (to select specific row on the table)
+postgres=# SELECT * FROM users;  (to show up the entire data of the table) 
+postgres=# ALTER TABLE table_name ADD column datatype; (to add column into the table)
+postgres=# UPDATE table_name SET some_column = some_value WHERE some_column = some_value;(this means 
+	   by setting  a value on specific table with specific name of column)
+postgres=# UPDATE users SET score=100 WHERE name='abebe' OR name='alemu';(TO UPDATE TWO ROW);
+postgres=# SELECT * FROM users WHERE name LIKE 'A%'; (TO SELECT ALL NAMES START WITH A, % MEANS ALL AFTER A,'%A'=all before A)
+postgres=# SELECT * FROM users ORDER BY score DESC OR ASC;(TO PUT DATA ON ASCENDING AND DESCENDING)
+
+sql FUNCTIONS
+postges=# SELECT AVG(score) FROM users;(average of all scores)
+postges=# SELECT SUM(age) FROM users;(sum of all ages)
+postges=# SELECT COUNT(users) FROM users;(count number of users)
+
+Joining A tables
+postgres=# CREATE TABLE login(ID serial NOT NULL PRIMARY KEY,
+			      secret VARCHAR (100) NOT NULL,
+			      name text UNIQUE NOT NULL);
+postgres=# INSERT INTO login (secret, name) VALUE ('abc', 'abebe');
+postgres=# SELECT * FROM users JOIN login ON users.name = login.name;
+
